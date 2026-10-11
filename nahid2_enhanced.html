@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nahid Hasan | Personal Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#a855f7',
+                        darkBg: '#0f172a',
+                        cardDark: 'rgba(30, 41, 59, 0.7)',
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
+                            '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .glass {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+/* CINEMATIC / PLAYFUL PORTFOLIO LAYER */
+:root{--neon-cyan:#67e8f9;--neon-lime:#d9f99d}html{scroll-padding-top:90px}body{overflow-x:hidden}::selection{background:#d9f99d;color:#101827}
+#scroll-progress{position:fixed;top:0;left:0;width:0;height:3px;z-index:10001;background:linear-gradient(90deg,#67e8f9,#a78bfa,#f9a8d4,#d9f99d);box-shadow:0 0 18px #a78bfa}
+#custom-cursor,#cursor-ring{position:fixed;left:0;top:0;border-radius:50%;pointer-events:none;z-index:10002;transform:translate(-50%,-50%)}#custom-cursor{width:12px;height:12px;border:2px solid #d9f99d;mix-blend-mode:difference;transition:width .18s,height .18s}#cursor-ring{width:38px;height:38px;border:1px solid #67e8f9;z-index:10001;transition:width .25s,height .25s}body.cursor-hover #custom-cursor{width:24px;height:24px;background:#d9f99d55}body.cursor-hover #cursor-ring{width:54px;height:54px;border-color:#d9f99d}
+#intro-loader{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:#070b16;transition:opacity .7s,visibility .7s}#intro-loader.loaded{opacity:0;visibility:hidden}.loader-core{text-align:center}.loader-orbit{width:76px;height:76px;border:1px solid #67e8f944;border-top-color:#67e8f9;border-right-color:#a78bfa;border-radius:50%;margin:0 auto 24px;animation:orbit .9s linear infinite;position:relative}.loader-orbit:after{content:'NH';position:absolute;inset:13px;display:grid;place-items:center;border-radius:50%;background:#111827;color:#d9f99d;font:700 16px monospace}.loader-quote{color:#94a3b8;font:12px monospace;letter-spacing:.2em;text-transform:uppercase}@keyframes orbit{to{transform:rotate(360deg)}}
+#particle-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.5}.noise-overlay{position:fixed;inset:0;z-index:999;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
+.eyebrow{font:600 10px monospace;letter-spacing:.2em;text-transform:uppercase;color:#67e8f9}.hero-stamp{position:absolute;right:4%;bottom:9%;transform:rotate(-9deg);border:1px dashed #d9f99d88;color:#d9f99d;padding:11px 14px;border-radius:50%;font:10px monospace;letter-spacing:.1em;opacity:.8}.terminal-card{background:#050a14d9;border:1px solid #67e8f938;border-radius:16px;overflow:hidden;box-shadow:0 20px 70px #0005}.terminal-top{display:flex;align-items:center;gap:6px;padding:12px 15px;border-bottom:1px solid #94a3b81f;color:#94a3b8;font:11px monospace}.terminal-dot{width:7px;height:7px;border-radius:50%;background:#fb7185}.terminal-dot:nth-child(2){background:#fbbf24}.terminal-dot:nth-child(3){background:#86efac}.terminal-body{padding:15px 18px;font:12px/1.9 monospace;color:#cbd5e1}.terminal-body .prompt{color:#d9f99d}.terminal-body .muted{color:#64748b}.terminal-body .typing{color:#67e8f9}.micro-tag{display:inline-flex;align-items:center;gap:7px;border:1px solid #94a3b833;border-radius:999px;padding:7px 11px;color:#cbd5e1;font:10px monospace;background:#0f172a7a}.micro-tag i{color:#d9f99d}.section-number{color:#64748b;font:11px monospace;letter-spacing:.12em}.section-number span{color:#67e8f9}.reveal-line{height:1px;background:linear-gradient(90deg,transparent,#67e8f977,#a78bfa55,transparent);max-width:900px;margin:0 auto}
+.fun-button{border:1px solid #d9f99d66;background:#d9f99d0f;color:#d9f99d}.fun-button:hover{background:#d9f99d;color:#0f172a;box-shadow:0 0 35px #d9f99d30}.project-card{transform-style:preserve-3d;will-change:transform}.project-card .project-art{position:relative;overflow:hidden}.project-card .project-art:after{content:'';position:absolute;inset:-80% -30%;background:linear-gradient(115deg,transparent 42%,#ffffff20 50%,transparent 58%);transform:translateX(-60%) rotate(10deg);transition:transform .8s}.project-card:hover .project-art:after{transform:translateX(60%) rotate(10deg)}.project-card:hover{box-shadow:0 25px 65px #6366f11f}
+.fun-toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:10003;background:#d9f99d;color:#111827;border-radius:14px;padding:13px 18px;font:600 12px/1.5 monospace;box-shadow:0 12px 40px #0006;transition:all .3s;max-width:calc(100vw - 30px);text-align:center}.fun-toast.show{opacity:1;transform:translate(-50%,0)}#chaos-toggle{position:fixed;right:18px;bottom:18px;z-index:80;border:1px solid #67e8f966;background:#0f172adc;backdrop-filter:blur(12px);color:#67e8f9;border-radius:999px;padding:10px 13px;font:10px monospace;box-shadow:0 8px 30px #0004;transition:all .25s}#chaos-toggle:hover{color:#0f172a;background:#67e8f9;transform:translateY(-3px)}body.chaos-mode .glass{animation:chaos-glow 1.8s ease-in-out infinite alternate}body.chaos-mode h2,body.chaos-mode h3{text-shadow:0 0 18px #d9f99d40}@keyframes chaos-glow{from{border-color:#67e8f91f}to{border-color:#d9f99d77}}.contact-orbit{position:absolute;width:210px;height:210px;border:1px dashed #67e8f933;border-radius:50%;right:-80px;top:-100px;animation:orbit 22s linear infinite;pointer-events:none}.contact-orbit:before,.contact-orbit:after{content:'';position:absolute;width:8px;height:8px;border-radius:50%;background:#d9f99d;box-shadow:0 0 15px #d9f99d}.contact-orbit:before{top:24px;left:34px}.contact-orbit:after{bottom:35px;right:18px;background:#67e8f9;box-shadow:0 0 15px #67e8f9}
+@media(pointer:coarse),(max-width:768px){#custom-cursor,#cursor-ring{display:none}.hero-stamp{display:none}#chaos-toggle{right:10px;bottom:10px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-300">
+<div id="intro-loader" aria-label="Loading portfolio"><div class="loader-core"><div class="loader-orbit"></div><div class="loader-quote">assembling ambition.exe</div><div style="margin-top:9px;color:#475569;font:10px monospace">PLEASE WAIT WHILE DREAMS COMPILE</div></div></div><div id="scroll-progress"></div><div id="custom-cursor"></div><div id="cursor-ring"></div><canvas id="particle-canvas" aria-hidden="true"></canvas><div class="noise-overlay"></div><div class="fun-toast" id="fun-toast" role="status"></div><button id="chaos-toggle" type="button" aria-label="Toggle fun mode">✳ ACTIVATE CHAOS</button>
+
+    <!-- Background Glow Effects -->
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"></div>
+    <div class="fixed bottom-0 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse" style="animation-delay: 2s;"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+                <span class="p-2 bg-indigo-600 rounded-lg text-white font-mono text-xl">< NH /></span>
+                <span class="hidden sm:inline">Nahid Hasan</span>
+            </a>
+
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-indigo-400 transition-colors">About</a>
+                <a href="#achievements" class="hover:text-indigo-400 transition-colors">Achievements</a>
+                <a href="#skills" class="hover:text-indigo-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-indigo-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-indigo-400 transition-colors">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="px-5 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl hover:shadow-lg hover:shadow-indigo-500/25 transition-all transform hover:-translate-y-0.5">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-24 px-6 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <div class="eyebrow mb-5">[ HUMAN.EXE // VERSION 2.0 ]</div>
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass border border-indigo-500/30 text-indigo-300 text-xs font-semibold mb-6">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    Student | Medical Aspirant | Dreamer
+                </div>
+                <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                 I'm <span class="text-gradient scramble" id="hero-name">Nahid Hasan</span>
+                </h1>
+                <p class="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
+                    An HSC'27 Candidate with a passion for learning and problem-solving, aspiring to earn a chance at Dhaka Medical College (DMC).
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-xl transition-all shadow-lg shadow-indigo-600/30 flex items-center gap-2 transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-code"></i> View Projects
+                    </a>
+                    <a href="#achievements" class="px-6 py-3.5 glass hover:bg-slate-800/80 text-white font-medium rounded-xl transition-all border border-slate-700 flex items-center gap-2 transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-trophy text-amber-400"></i> My Achievements
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mt-7 mb-1"><span class="micro-tag"><i class="fa-solid fa-dna"></i> BIOLOGY MODE</span><span class="micro-tag"><i class="fa-solid fa-code"></i> DEBUGGING LIFE</span><span class="micro-tag"><i class="fa-solid fa-lightbulb"></i> IDEAS IN BETA</span></div>
+                <!-- Social Links -->
+                <div class="mt-12 flex items-center gap-6 text-slate-400">
+                    <a href="https://www.facebook.com/iamnahidh" target="_blank" class="hover:text-indigo-400 text-2xl transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/iam_nahidhasan.official" target="_blank" class="hover:text-indigo-400 text-2xl transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:nahidh9414@gmail.com" class="hover:text-indigo-400 text-2xl transition-colors"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="flex justify-center relative" data-aos="fade-left" data-aos-duration="1000"><div class="absolute -top-8 -left-4 sm:left-0 z-10 terminal-card w-56 sm:w-64" data-aos="zoom-in" data-aos-delay="500"><div class="terminal-top"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="ml-2">nahid@future:~</span></div><div class="terminal-body"><div><span class="prompt">$</span> whoami</div><div>student / builder / dreamer</div><div><span class="prompt">$</span> current_mission</div><div class="typing">learn → build → improve<span class="animate-pulse">_</span></div><div class="muted">// still under construction, obviously</div></div></div><div class="hero-stamp">CERTIFIED<br>WORK IN<br>PROGRESS</div>
+                <div class="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden glass p-3 relative group animate-float border border-indigo-500/20">
+                    <div class="w-full h-full rounded-2xl overflow-hidden relative">
+ <img src="profile.jpg" alt="Nahid Hasan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">                              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <div class="reveal-line"></div><section id="about" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="section-number mb-3">[ <span>01</span> / THE HUMAN BEHIND THE TAB ]</div><h2 class="text-3xl font-bold text-gradient inline-block mb-3">About Me</h2>
+                <p class="text-slate-400 max-w-xl mx-auto">Driven by ambition, logic, and dedication toward medical & academic excellence.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition-all hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-indigo-600/20 text-indigo-400 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Medical Aspirant</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Dedicated to pursuing higher education at Dhaka Medical College (DMC) and building a solid foundation in Biology, Chemistry, and Physics.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition-all hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-purple-600/20 text-purple-400 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">HSC '27 Journey</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Currently preparing as an HSC 2027 candidate with strong focus on understanding fundamental scientific concepts step-by-step.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition-all hover:-translate-y-1" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-pink-600/20 text-pink-400 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Competitions & Logic</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Enthusiastic participant in national olympiads and competitions including Programming Contests and Economics Olympiad.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Olympiads Section -->
+    <section id="achievements" class="py-24 px-6 bg-slate-900/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="section-number mb-3">[ <span>02</span> / PROOF OF CURIOSITY ]</div><h2 class="text-3xl font-bold text-gradient inline-block mb-3">Olympiads & Achievements</h2>
+                <p class="text-slate-400 max-w-xl mx-auto">Competitions and national rounds participated in.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Achievement 1 -->
+                <div class="glass p-6 rounded-2xl relative overflow-hidden group hover:border-amber-500/50 transition-all" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Economics Olympiad 2025</h4>
+                            <span class="text-xs text-slate-400">Bangladesh Economics Olympiad</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed">Participated in the Bangladesh Economics Olympiad 2025, exploring economic concepts, analytical thinking, and policy logic.</p>
+                </div>
+
+                <!-- Achievement 2 -->
+                <div class="glass p-6 rounded-2xl relative overflow-hidden group hover:border-indigo-500/50 transition-all" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">NHSPC 2025</h4>
+                            <span class="text-xs text-slate-400">National High School Programming Contest</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed">Participated in NHSPC 2025, focusing on basic programming concepts, logical puzzle solving, and algorithmic thinking.</p>
+                </div>
+
+                <!-- Achievement 3 -->
+                <div class="glass p-6 rounded-2xl relative overflow-hidden group hover:border-emerald-500/50 transition-all" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">NHSPC 2026</h4>
+                            <span class="text-xs text-slate-400">National High School Programming Contest</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed">Continued participation in NHSPC 2026 to further sharpen computational logic and problem-solving abilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="section-number mb-3">[ <span>03</span> / SKILLS LOADING... ]</div><h2 class="text-3xl font-bold text-gradient inline-block mb-3">Skills & Expertise</h2>
+                <p class="text-slate-400 max-w-xl mx-auto">Technical abilities and programming foundation.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="glass p-6 rounded-2xl space-y-4" data-aos="fade-right">
+                    <h3 class="font-bold text-lg mb-4 text-indigo-400"><i class="fa-solid fa-code mr-2"></i> Programming</h3>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>C Programming</span>
+                            <span class="text-indigo-400">10%</span>
+                        </div>
+                        <div class="w-full bg-slate-800 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-2 rounded-full" style="width: 10%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl space-y-4" data-aos="fade-left">
+                    <h3 class="font-bold text-lg mb-4 text-purple-400"><i class="fa-solid fa-stethoscope mr-2"></i> Medical Prep & Science</h3>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Biology & Medical Preparation</span>
+                            <span class="text-purple-400">Active</span>
+                        </div>
+                        <div class="w-full bg-slate-800 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-6 bg-slate-900/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="section-number mb-3">[ <span>04</span> / IDEAS THAT ESCAPED MY BRAIN ]</div><h2 class="text-3xl font-bold text-gradient inline-block mb-3">Projects</h2>
+                <p class="text-slate-400 max-w-xl mx-auto">Key initiatives and project ideas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="glass project-card rounded-2xl overflow-hidden group hover:border-indigo-500/50 transition-all" data-aos="fade-up">
+                    <div class="project-art h-48 bg-slate-800 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-600/30 to-purple-600/30 flex items-center justify-center">
+                            <i class="fa-solid fa-user-md text-6xl text-white/40 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Journey Of Being Medical Student</h3>
+                        <p class="text-slate-400 text-sm mb-4">A project focused on medical study resources, conceptual learning guides, and DMC admission preparation tracking.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass project-card rounded-2xl overflow-hidden group hover:border-indigo-500/50 transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-art h-48 bg-slate-800 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/30 to-pink-600/30 flex items-center justify-center">
+                            <i class="fa-solid fa-graduation-cap text-6xl text-white/40 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Journey of Edtech Platform</h3>
+                        <p class="text-slate-400 text-sm mb-4">An educational technology platform initiative aimed at simplifying complex topics for HSC and admission candidates.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass project-card rounded-2xl overflow-hidden group hover:border-indigo-500/50 transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-art h-48 bg-slate-800 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-600/30 to-teal-600/30 flex items-center justify-center">
+                            <i class="fa-solid fa-map-location-dot text-6xl text-white/40 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">How I Travel Bangladesh</h3>
+                        <p class="text-slate-400 text-sm mb-4">An interactive travel project showcasing the beauty, culture, and famous destinations across Bangladesh.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="glass project-card rounded-2xl overflow-hidden group hover:border-indigo-500/50 transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-art h-48 bg-slate-800 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-amber-600/30 to-rose-600/30 flex items-center justify-center">
+                            <i class="fa-solid fa-earth-americas text-6xl text-white/40 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">How I Travel World</h3>
+                        <p class="text-slate-400 text-sm mb-4">A global travel exploration concept designed to feature iconic international landmarks and travel itineraries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 relative">
+        <div class="max-w-4xl mx-auto glass p-8 sm:p-12 rounded-3xl border border-slate-800 relative overflow-hidden" data-aos="fade-up"><div class="contact-orbit"></div>
+            <div class="text-center mb-12">
+                <div class="section-number mb-3">[ <span>05</span> / OPEN CHANNEL ]</div><h2 class="text-3xl font-bold text-gradient inline-block mb-3">Let's Connect</h2>
+                <p class="text-slate-400">Feel free to reach out for collaborations or learning discussions!</p>
+            </div>
+
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Name</label>
+                        <input type="text" class="w-full bg-slate-900/80 border border-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Email</label>
+                        <input type="email" class="w-full bg-slate-900/80 border border-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-500 transition-colors" placeholder="your@email.com">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Message</label>
+                    <textarea rows="4" class="w-full bg-slate-900/80 border border-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Say something..."></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium rounded-xl hover:shadow-lg hover:shadow-indigo-500/25 transition-all">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section class="px-6 pb-20"><div class="max-w-4xl mx-auto terminal-card" data-aos="fade-up"><div class="terminal-top"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="ml-2">easter_egg.sh</span><span class="ml-auto">100% harmless</span></div><div class="p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-5 justify-between"><div><div class="eyebrow mb-2">A QUICK REALITY CHECK</div><h3 class="text-xl sm:text-2xl font-bold mb-2">Plot twist: nobody has it all figured out.</h3><p class="text-slate-400 text-sm">Some people have a 10-year plan. I have 17 tabs open and a dream. We move.</p></div><button id="reality-btn" class="fun-button rounded-xl px-5 py-3 text-xs font-bold shrink-0 transition-all" type="button">RUN REALITY CHECK ↗</button></div></div></section>
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-800 text-center text-sm text-slate-500">
+        <p>© 2026 Nahid Hasan. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS Animation JS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+
+<script>(()=>{const $=s=>document.querySelector(s),toast=$('#fun-toast');let toastTimer;const showToast=m=>{if(!toast)return;toast.textContent=m;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),3200)};const loader=$('#intro-loader'),hide=()=>loader&&loader.classList.add('loaded');addEventListener('load',()=>setTimeout(hide,650));setTimeout(hide,2200);
+const cursor=$('#custom-cursor'),ring=$('#cursor-ring');let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;if(matchMedia('(pointer:fine)').matches){addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;if(cursor){cursor.style.left=mx+'px';cursor.style.top=my+'px'}});const follow=()=>{rx+=(mx-rx)*.18;ry+=(my-ry)*.18;if(ring){ring.style.left=rx+'px';ring.style.top=ry+'px'}requestAnimationFrame(follow)};follow();document.querySelectorAll('a,button,input,textarea,.project-card').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'))})}
+const progress=$('#scroll-progress'),update=()=>{const max=document.documentElement.scrollHeight-innerHeight;if(progress)progress.style.width=(max>0?scrollY/max*100:0)+'%'};addEventListener('scroll',update,{passive:true});update();
+const canvas=$('#particle-canvas'),ctx=canvas&&canvas.getContext('2d');let particles=[],w=0,h=0,dpr=1;function resize(){if(!canvas||!ctx)return;dpr=Math.min(devicePixelRatio||1,1.5);w=innerWidth;h=innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);particles=Array.from({length:Math.min(65,Math.floor(w/20))},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.22,vy:(Math.random()-.5)*.22,r:Math.random()*1.5+.4}))}function draw(){if(!ctx)return;ctx.clearRect(0,0,w,h);for(let i=0;i<particles.length;i++){let p=particles[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(165,180,252,.65)';ctx.fill();for(let j=i+1;j<particles.length;j++){let q=particles[j],dist=Math.hypot(p.x-q.x,p.y-q.y);if(dist<105){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=`rgba(103,232,249,${(1-dist/105)*.12})`;ctx.lineWidth=.7;ctx.stroke()}}}if(!matchMedia('(prefers-reduced-motion: reduce)').matches)requestAnimationFrame(draw)}resize();draw();addEventListener('resize',resize,{passive:true});
+if(matchMedia('(pointer:fine) and (prefers-reduced-motion: no-preference)').matches)document.querySelectorAll('.project-card').forEach(card=>{card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(900px) rotateY(${x*4}deg) rotateX(${-y*4}deg) translateY(-3px)`});card.addEventListener('mouseleave',()=>card.style.transform='perspective(900px) rotateY(0) rotateX(0) translateY(0)')});
+const chaos=$('#chaos-toggle');let on=false;if(chaos)chaos.addEventListener('click',()=>{on=!on;document.body.classList.toggle('chaos-mode',on);chaos.textContent=on?'✳ CHAOS: CONTAINED':'✳ ACTIVATE CHAOS';showToast(on?'Chaos mode enabled. Your productivity has been notified.':'Chaos contained. Back to pretending we have a plan.')});const reality=$('#reality-btn');if(reality)reality.addEventListener('click',()=>{const lines=['Reality check passed: you are allowed to be a beginner.','Achievement unlocked: opened a portfolio instead of another snack tab.','Reminder.exe: consistency beats cinematic background music.','Doctor in progress. Entrepreneur in beta. Sleep schedule: mysterious.','404: perfect timing not found. Start anyway.'];showToast(lines[Math.floor(Math.random()*lines.length)])});let keys='';addEventListener('keydown',e=>{if(['INPUT','TEXTAREA'].includes(document.activeElement.tagName))return;keys=(keys+e.key.toLowerCase()).slice(-2);if(keys==='nh')showToast('Secret handshake accepted. Welcome to the Nahid-verse.')});const logo=document.querySelector('nav a[href="#"]');if(logo)logo.addEventListener('dblclick',()=>showToast('NH stands for Nahid Hasan. Also: Never Hesitate (to learn).'))})();</script>
+</body>
+</html>
